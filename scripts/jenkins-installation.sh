@@ -1,5 +1,5 @@
 #!/bin/bash
-// Following script will do the jenkins installations
+// Following 1script will do the jenkins installations
 
 sudo apt-get update -y
 sudo apt-get install openjdk-8-jdk -y
