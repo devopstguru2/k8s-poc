@@ -20,9 +20,11 @@ pipeline {
         }
         stage("Notify"){
             steps{
-                def userIdsString = userIds.collect { "<@$it>" }.join(' ')
-                slackSend(color: "good", message: "$userIdsString Message from Jenkins Pipeline")
-                echo "Notify to slack channel"
+                step{
+                    def userIdsString = userIds.collect { "<@$it>" }.join(' ')
+                    slackSend(color: "good", message: "$userIdsString Message from Jenkins Pipeline")
+                    echo "Notify to slack channel"
+                }
             }
         }
     }
